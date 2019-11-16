@@ -1,6 +1,6 @@
 # USBMap
 Py script for mapping out USB ports and creating a custom SSDT or injector kext (WIP).
-Py脚本，用于映射USB端口并创建自定义SSDT或injector kext(WIP)
+<br>Py脚本，用于映射USB端口并创建自定义SSDT或injector kext(WIP)
 
 ***
 
@@ -25,7 +25,7 @@ Controllers must be named as follows:
 
 * _EHC1 -> EH01_
 * _EHC2 -> EH02_
-* _XHCI/XHC1 -> XHC\_
+* _XHCI/XHC1 -> XHC__
 
  - To begin port detection, you'll need to have _USBInjectAll.kext_ (and possibly the _XHCI_unsupported.kext_) and either use the Port Limit Increase patch for your OS version, or you'll need to detect ports in sweeps (first disable all _SSxx_ ports, then disable all _HSxx_ ports). <br/> The latter is how this readme will be focused as it allows for mapping on OS versions where a port limit patch doesn't exist.
 <br/> - 要开始端口检测，您需要有USBInjectAll.kext（可能还有_XHCI_unsupported.kext_），或者为您的操作系统版本使用端口限制增加补丁，或者需要在扫描中检测端口（首先禁用所有 _SSxx_ 端口，然后禁用所有 _HSxx_ 端口）。<br/>后者是如何使该自述文件集中，因为它允许在不存在端口限制补丁的OS版本上进行映射。
