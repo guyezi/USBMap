@@ -1,41 +1,35 @@
 # USBMap
-Py script for mapping out USB ports and creating a custom SSDT or injector kext (WIP).
-<br>Py脚本，用于映射USB端口并创建自定义SSDT或injector kext(WIP)
+<br>Py脚本，用于映射USB端口并创建自定义SSDT或injector kext(WIP).
 
 ***
 
 # Installation
 
-To install, do the following one line at a time in Terminal:
 <br/>要安装，请在终端中一次执行以下一行操作:
 
     git clone https://github.com/corpnewt/USBMap
     cd USBMap
     chmod +x USBMap.command
     
-Then run with either `./USBMap.command` or by double-clicking *USBMap.command*
 <br/>然后使用 `./USBMap.command` 或双击 *USBMap.command*
 
 ***
 
 # PreRequisites
 
-Controllers must be named as follows:
 <br/>控制器必须命名如下:
 
 * _EHC1 -> EH01_
 * _EHC2 -> EH02_
 * _XHCI/XHC1 -> XHC__
 
- - To begin port detection, you'll need to have _USBInjectAll.kext_ (and possibly the _XHCI_unsupported.kext_) and either use the Port Limit Increase patch for your OS version, or you'll need to detect ports in sweeps (first disable all _SSxx_ ports, then disable all _HSxx_ ports). <br/> The latter is how this readme will be focused as it allows for mapping on OS versions where a port limit patch doesn't exist.
-<br/> - 要开始端口检测，您需要有USBInjectAll.kext（可能还有_XHCI_unsupported.kext_），或者为您的操作系统版本使用端口限制增加补丁，或者需要在扫描中检测端口（首先禁用所有 _SSxx_ 端口，然后禁用所有 _HSxx_ 端口）。<br/>后者是如何使该自述文件集中，因为它允许在不存在端口限制补丁的OS版本上进行映射。
+- 要开始端口检测，您需要有USBInjectAll.kext（可能还有XHCI_unsupported.kext），或者为您的操作系统版本使用端口限制增加补丁，或者需要在扫描中检测端口（首先禁用所有_ SSxx _端口，然后禁用所有_ HSxx _端口）。<br/>后者是如何使该自述文件集中，因为它允许在不存在端口限制补丁的OS版本上进行映射。
 
 ***
 
 # Some Practices To Consider
 
-Unless we use a port limit patch, each controller is limited to 15 USB ports. <br/> As ports are detected as populated by the script, they will be counted based on their controller and that count displayed at the bottom of the window. <br/> It's important to approach this pragmatically. <br/> Some logical solutions include:
-<br/>除非我们使用端口限制补丁，否则每个控制器只能有15个USB端口。<br/>当检测到由脚本填充的端口时，它们将根据其控制器和显示在窗口底部的计数进行计数。务实地对待这一点很重要。一些逻辑解决方案包括
+- 除非我们使用端口限制补丁，否则每个控制器只能有15个USB端口。<br/>当检测到由脚本填充的端口时，它们将根据其控制器和显示在窗口底部的计数进行计数。务实地对待这一点很重要。一些逻辑解决方案包括:
 
 * If you have your keyboard and mouse plugged into USB 3.0 ports, they will likely only be using the USB 2.0 port associated with it - so you can omit the USB 3.0 variant of each port.<br/>
 * 如果将键盘和鼠标插入USB3.0端口，则它们可能只使用与其关联的USB2.0端口，因此可以省略每个端口的USB3.0变体。<br/>
